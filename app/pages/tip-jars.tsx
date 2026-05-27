@@ -25,7 +25,7 @@ export default function TipJarsPage() {
       // Fetch platform config
       const [platformConfigPDA] = getPlatformConfigPDA();
       try {
-        const config = await program.account.platformConfig.fetch(
+        const config = await (program.account as any).platformConfig.fetch(
           platformConfigPDA
         );
         setPlatformFeeReceiver((config.feeReceiver as PublicKey).toBase58());
@@ -39,7 +39,7 @@ export default function TipJarsPage() {
       }
 
       // Fetch all tip jar accounts (uses the discriminator to filter by type)
-      const accounts = await program.account.tipJar.all();
+      const accounts = await (program.account as any).tipJar.all();
 
       const parsed: TipJarData[] = accounts.map((a) => ({
         publicKey: a.publicKey.toBase58(),
