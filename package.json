@@ -1,0 +1,21 @@
+{
+  "name": "tip-jar-dapp",
+  "version": "0.1.0",
+  "scripts": {
+    "test": "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts",
+    "copy-idl": "cp target/idl/tip_jar.json idl/tip_jar.json && echo 'IDL copied to idl/'"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.31.0",
+    "@solana/web3.js": "^1.95.3"
+  },
+  "devDependencies": {
+    "@types/bn.js": "^5.1.6",
+    "@types/chai": "^4.3.12",
+    "@types/mocha": "^10.0.6",
+    "chai": "^4.4.1",
+    "mocha": "^10.3.0",
+    "ts-mocha": "^10.0.0",
+    "typescript": "^5.4.2"
+  }
+}
